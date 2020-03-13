@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "strictNullChecks": false,
+    "strictFunctionTypes": false,
+    "strictPropertyInitialization": false,
+    "strictBindCallApply": false,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "useDefineForClassFields": false,
+    "alwaysStrict": false,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "downlevelIteration": false,
+    "noEmitHelpers": false,
+    "noLib": false,
+    "noStrictGenericChecks": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "esModuleInterop": true,
+    "preserveConstEnums": false,
+    "removeComments": false,
+    "skipLibCheck": false,
+    "checkJs": false,
+    "allowJs": false,
+    "declaration": true,
+    "experimentalDecorators": false,
+    "emitDecoratorMetadata": false,
+    "target": "ES2017",
+    "jsx": "React",
+    "module": "ESNext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
+  },
+  "include": [
+    "src"
+  ]
+}
