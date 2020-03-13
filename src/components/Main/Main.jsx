@@ -48,11 +48,12 @@ class Main extends Component {
   }
 }
 
+// eslint-disable-next-line react/no-typos
 Main.PropTypes = {
 
 }
 
-Main.defaulsProps = {
+Main.defaultProps = {
 
 }
 
