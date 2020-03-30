@@ -2,13 +2,13 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 
-class Main extends Component { 
+class Categories extends Component { 
   state = {
     hasError: false,
   }
 
   componentDidMount = () => {
-    console.log('Main mounted');
+    console.log('Categories mounted');
   }
 
   static getDerivedStateFromError(error) {
@@ -21,19 +21,19 @@ class Main extends Component {
   }
 
   getDerivedStateFromProps = (nextProps, prevState) => {
-    console.log('Main getDerivedStateFromProps', nextProps, prevState);
+    console.log('Categories getDerivedStateFromProps', nextProps, prevState);
   }
 
   getSnapshotBeforeUpdate = (prevProps, prevState) => {
-    console.log('Main getSnapshotBeforeUpdate', prevProps, prevState);
+    console.log('Categories getSnapshotBeforeUpdate', prevProps, prevState);
   }
 
   componentDidUpdate = () => {
-    console.log('Main did update');
+    console.log('Categories did update');
   }
 
   componentWillUnmount = () => {
-    console.log('Main will unmount');
+    console.log('Categories will unmount');
   }
 
   render () {
@@ -41,20 +41,19 @@ class Main extends Component {
       return <h1>Something went wrong.</h1>;
     }
     return (
-      <div className="Main-wrapper">
+      <div className="Categories-wrapper">
         Test content
       </div>
     );
   }
 }
 
-// eslint-disable-next-line react/no-typos
-Main.PropTypes = {
+Categories.PropTypes = {
 
 }
 
-Main.defaultProps = {
+Categories.defaulsProps = {
 
 }
 
-export default Main;
+export default Categories;
