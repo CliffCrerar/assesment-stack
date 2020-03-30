@@ -22,12 +22,12 @@
     "removeComments": false,
     "skipLibCheck": false,
     "checkJs": false,
-    "allowJs": false,
+    "allowJs": true,
     "declaration": true,
-    "experimentalDecorators": false,
+    "experimentalDecorators": true,
     "emitDecoratorMetadata": false,
     "target": "ES2017",
-    "jsx": "React",
+    "jsx": "react",
     "module": "ESNext",
     "lib": [
       "dom",
@@ -44,6 +44,7 @@
     "baseUrl": ""
   },
   "include": [
-    "src"
+    "src",
+    "src/components"
   ]
 }

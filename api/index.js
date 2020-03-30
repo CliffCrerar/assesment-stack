@@ -3,18 +3,22 @@
  */
 // @ts-nocheck
 require('dotenv').config();
-const { express, app, ReadStream, Pool, staticApp, idx} = require('./init')
 
-console.log('Pool: ', Pool().query('select now()').then(res=>console.log(res)));
+const { express, app, ReadStream, Pool, staticApp, idx } = require('./init')
 
-console.log(process.env.NODE_ENV);
-console.log(process.env);
 
-app.all('*',(req,res,next)=>{
-    console.log('PATH: ',req.path.startsWith('/ta'), req.path);
+Pool().query('select now()')
+    .then(res => console.log(res.rows[0].now, 'CONNECTED TO DB'))
+    .catch(err => {
+        console.log('NOT CONNECTING TO DB:', err)
+        process.exit(400)
+    })
+
+app.all('*', (req, res, next) => {
+    console.log('PATH: ', req.path.startsWith('/ta'), req.path);
     // console.table(Object.entries(req.headers).forEach(h=>console.log('key:',h[0],'value:',h[1])));
-    if(req.path==='/' && req.path) res.redirect('/ta');
-    if(!req.path.startsWith('/ta') && !req.path.startsWith('/api')) res.status(202).redirect('/ta'+req.path);
+    if (req.path === '/' && req.path) res.redirect('/ta');
+    if (!req.path.startsWith('/ta') && !req.path.startsWith('/api')) res.status(202).redirect('/ta' + req.path);
     next()
 })
 
@@ -31,4 +35,4 @@ app.get('/api/test', (req, res) => {
 
 // module.exports = app;
 
-app.listen(8080,()=>console.log('Running Locally'))
+app.listen(8080, () => console.log('Running Locally'))
