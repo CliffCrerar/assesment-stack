@@ -2,9 +2,13 @@
  * Api root
  */
 // @ts-nocheck
-
+require('dotenv').config();
 const { express, app, ReadStream, Pool, staticApp, idx} = require('./init')
 
+console.log('Pool: ', Pool().query('select now()').then(res=>console.log(res)));
+
+console.log(process.env.NODE_ENV);
+console.log(process.env);
 
 app.all('*',(req,res,next)=>{
     console.log('PATH: ',req.path.startsWith('/ta'), req.path);
@@ -15,6 +19,7 @@ app.all('*',(req,res,next)=>{
 })
 
 app.use('/ta', express.static(staticApp));
+
 app.get('/ta', (req, res) => ReadStream(idx).pipe(res));
 
 app.get('/api/test', (req, res) => {
@@ -24,4 +29,6 @@ app.get('/api/test', (req, res) => {
         .catch(err => res.status(500).send(err))
 })
 
-module.exports = app;
+// module.exports = app;
+
+app.listen(8080,()=>console.log('Running Locally'))
