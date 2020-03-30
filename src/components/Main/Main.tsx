@@ -1,6 +1,9 @@
 // @flow
 import React, { Component } from 'react';
-
+import './Main.scss';
+import Nav from './Nav/Nav';
+import SideNav from './SideNav/SideNav';
+import Content from './Content/Content';
 
 class Main extends Component {
   constructor(props: any) {
@@ -10,8 +13,17 @@ class Main extends Component {
 
   render() {
     return (
-      <div>
-        MAIN
+      <div className="main-wrapper">
+        <nav>
+          <Nav/>
+        </nav>
+
+        <main className="sections">
+          {/* <SideNav/> */}
+          <Content/>
+        </main>
+        
+        
       </div>
     )
   }

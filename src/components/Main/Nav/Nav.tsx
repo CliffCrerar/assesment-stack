@@ -1,19 +1,30 @@
 // @flow
 import React from 'react';
 // import PropTypes from 'prop-types';
+import './Nav.scss'
 
-const Nav = (props:any) => (
-  <div className="Nav-wrapper">
-    Test content
-  </div>
-);
+const nav = [
+  { caption: 'Categories' },
+  { caption: 'Animals' },
+  { caption: 'Zookeepers' }
+]
 
-Nav.PropTypes = {
-  
-}
+const Nav = (props: any) => {
 
-Nav.defaultProps = {
+  const links = nav.map(({ caption }, idx) => (
+    <li key={idx}>
+      <a href="#">{caption}</a>
+    </li>
+  ));
 
-} 
+  return (
+    <div className="nav-wrapper">
+      <h3>Zoo</h3>
+      <ul className="nav-links">
+        {links}
+      </ul>
+    </div>
+  )
+};
 
 export default Nav;
