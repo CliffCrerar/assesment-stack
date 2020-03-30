@@ -18,11 +18,14 @@ class Main extends Component {
           <Nav/>
         </nav>
 
+        <header></header>
+
         <main className="sections">
           {/* <SideNav/> */}
           <Content/>
         </main>
         
+        <footer></footer>
         
       </div>
     )
